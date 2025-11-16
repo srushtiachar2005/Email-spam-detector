@@ -1,86 +1,92 @@
-Email Spam Detector - Project Documentation
+# Email Spam Detector – Machine Learning Project
 
-This project is an Email Spam Detection system built using Python, Scikit-Learn, and Streamlit. The machine learning model uses TF-IDF Vectorization and Logistic Regression to classify messages as Spam or Ham (Not Spam).
+This is an Email Spam Detection system built using Python, Scikit-Learn, and Streamlit.  
+The model uses TF-IDF Vectorization and Logistic Regression to classify messages as Spam or Ham (Not Spam).
 
-Model Training Details:
-The model is trained using the file mail_data.csv.
-The dataset is cleaned by replacing missing values.
-The Category column is converted:
-ham = 0
-spam = 1
+FEATURES
 
-Text messages (Message column) are used as input features.
-The dataset is split into training and testing sets with an 80:20 ratio.
+• Classifies messages as Spam or Not Spam  
+• Uses TF-IDF for text vectorization  
+• Machine learning model: Logistic Regression  
+• Interactive Streamlit Web App  
+• Clean and simple project structure  
 
-TF-IDF Vectorizer is used to convert text into numerical features.
-Logistic Regression is used as the machine learning classifier.
-The trained model and vectorizer are saved using joblib.
+PROJECT STRUCTURE
 
-Project Structure:
+Email-Spam-Detector/
 
-model.py : Script to train and save the ML model
+├── app.py                       
+├── mail_data.csv                
+├── model.joblib 
+├── vectorizer.joblib     
+├── requirements.txt             
+└── README.md                    
 
-app.py : Streamlit web application
+MODEL TRAINING DETAILS
 
-mail_data.csv : Dataset used for training
+• Dataset: mail_data.csv  
+• Missing values replaced with empty strings  
+• Category converted: ham = 0, spam = 1  
+• Train-test split: 80% training / 20% testing  
+• TF-IDF Vectorizer (stop_words='english', lowercase=True)  
+• Classifier: Logistic Regression  
+• Model and vectorizer saved using joblib  
 
-spam_classifier_model.joblib : Saved Logistic Regression model
+TRAINING PROCESS
 
-tfidf_vectorizer.joblib : Saved TF-IDF vectorizer
+1. Load dataset with pandas  
+2. Replace null values  
+3. Convert labels (ham/spam → 0/1)  
+4. Apply TF-IDF vectorizer  
+5. Train Logistic Regression model  
+6. Print training & testing accuracy  
+7. Save model and vectorizer  
 
-requirements.txt : Project dependencies
-
-README.txt : Project documentation
-
-How Training Works:
-
-Dataset is loaded using pandas.
-
-Missing values are replaced with empty strings.
-
-Category values are converted to numeric form.
-
-Text messages are vectorized using TF-IDF (with stop_words='english').
-
-Logistic Regression model is trained on the features.
-
-Training and testing accuracy is printed.
-
-The trained model and vectorizer are saved as .joblib files.
-
-Installation Instructions:
-
-Install Python 3.
-
-Install required libraries:
-pip install -r requirements.txt
-
-To train the model again, run:
+To train the model again:
 python model.py
 
-To start the web app, run:
+
+RUNNING THE STREAMLIT APP
+
+Install dependencies:
+pip install -r requirements.txt
+
+Run the web app:
 streamlit run app.py
 
-Usage:
-Enter a message in the Streamlit interface.
-The app loads the trained model and TF-IDF vectorizer.
-It predicts whether the message is Spam or Ham.
 
-Technologies Used:
+USAGE
 
-Python
+1. Open the Streamlit application  
+2. Enter or paste any message  
+3. Click "Classify"  
+4. The app predicts:
+   ✔ Ham (Not Spam)
+   🚫 Spam
 
-Pandas
 
-Scikit-Learn
+TECHNOLOGIES USED
 
-Logistic Regression
+• Python  
+• Pandas  
+• Scikit-Learn  
+• TF-IDF Vectorizer  
+• Logistic Regression  
+• Streamlit  
+• Joblib  
 
-TF-IDF Vectorizer
+PURPOSE OF THIS PROJECT
 
-Streamlit
+This project helps understand:
+• Text classification  
+• Feature extraction using TF-IDF  
+• Building ML models  
+• Deployment using Streamlit  
+• Organizing ML projects for GitHub  
 
-Joblib
+CONTRIBUTION
 
-Purpose:
-This project helps in understanding text classification, vectorization, and machine learning model deployment using Streamlit.
+You can fork this repository and improve the UI, accuracy, or model.
+
+
+This project is open-source and available for learning.
